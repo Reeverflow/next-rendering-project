@@ -8,9 +8,15 @@
     "export": "next export"
   },
   "dependencies": {
+    "@netlify/next": "^1.4.1",
+    "autoprefixer": "^10.4.13",
     "cypress": "^10.0.3",
     "next": "^12.1.5",
+    "postcss": "^8.4.19",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
