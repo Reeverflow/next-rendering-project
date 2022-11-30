@@ -1,3 +1,4 @@
+import User from "@components/user";
 import Head from "next/head";
 import { useState } from "react";
 
@@ -35,6 +36,8 @@ export default function Home(props) {
 
   const buttonText = buttonState();
 
+  const { users } = props;
+
   return (
     <>
       <Head>
@@ -55,25 +58,20 @@ export default function Home(props) {
           >
             {buttonText}
           </button>
-
-          {!props.error &&
-            listState &&
-            props.users.map((u) => {
+          {listState &&
+            users.map((u) => {
               return (
                 <article
                   key={u.id}
-                  className={`bg-slate-600 bg-opacity-40 rounded-tr-md`}
+                  className={`bg-slate-200 bg-opacity-80 rounded-tr-md`}
                 >
-                  <h3 className={`text-red-500`}>{u.name}</h3>
+                  <h3 className={`text-red-300`}>{u.name}</h3>
+                  <User users={props} />
+
                   <hr className={`border-gray-400`} />
                 </article>
               );
             })}
-          {props.error && (
-            <div className={`flex justify-center`}>
-              <h2 className={`text-red-500 text-xl`}>{props.error}</h2>
-            </div>
-          )}
         </section>
       </main>
     </>
