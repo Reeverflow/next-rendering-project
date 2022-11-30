@@ -43,14 +43,14 @@ export default function Home(props) {
       <Head>
         <title>NextJS ServerSideRendering Project</title>
       </Head>
-      <main className={`h-screen flex flex-col justify-center items-center`}>
+      <main className={`h-screen flex flex-col items-center`}>
         <header
-          className={`text-4xl bg-zinc-700 w-1/3 max-w-sm mb-2 pr-5 p-2 text-gray-100`}
+          className={`text-4xl bg-zinc-700 w-2/3 max-w-sm mb-2 pr-5 p-2 text-center text-gray-100 shadow-md`}
         >
           <h1>Fake User List</h1>
         </header>
         <section
-          className={`flex flex-col gap-1 p-5 w-1/3 max-w-sm h-96 bg-slate-700 rounded-md`}
+          className={`flex flex-col gap-2 p-5 w-3/4 max-w-sm h-fit bg-slate-700 rounded-md`}
         >
           <button
             className={` h-10 bg-amber-400 bg-opacity-90 p-2 text-2xl text-gray-100 flex justify-center items-center mb-2 brightness-90 hover:brightness-105 transition-all duration-300`}
@@ -63,10 +63,9 @@ export default function Home(props) {
               return (
                 <article
                   key={u.id}
-                  className={`bg-slate-200 bg-opacity-80 rounded-tr-md`}
+                  className={`bg-stone-800 bg-opacity-50 rounded-tr-md shadow-md`}
                 >
-                  <h3 className={`text-red-300`}>{u.name}</h3>
-                  <User users={props} />
+                  <User u={u} />
 
                   <hr className={`border-gray-400`} />
                 </article>
